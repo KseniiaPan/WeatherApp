@@ -1,0 +1,141 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .search-container {
+    width: 800px;
+    height: 70%;
+    padding: 50px;
+    font-family: "Caveat", cursive;
+    font-weight: 400;
+    font-size: 30px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    background-color: #87CEEB;
+  }
+  .forecast-container {
+    width: 800px;
+    padding: 50px;
+    background-color: #87CEEB;
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+    color: white;
+  }
+  input {
+    padding:4px 10px;
+    border: 0;
+    outline: none;
+    font-size:16px;
+    width: 100%;
+   }
+  .search-button {
+    border-radius: 50px;
+    padding: 10px;
+    font-family: "Caveat", cursive;
+    font-size: 19px;
+    font-weight: 500;
+    cursor: pointer;border: 2px solid white;
+    margin-left: 20px;
+    background: #87CEEB;
+    color: white;
+    margin-bottom: 30px;
+  }
+  .search-container input::placeholder {
+    font-family: "Caveat", cursive;
+    font-size: 19px;
+    font-weight: 500;
+    color: #87CEEB;
+  }
+  .location {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  .location-icon {
+    width: 40px;
+    margin-right: 15px;
+  }
+  .location-icon:hover {
+    animation-name: lift-up;
+    animation-duration: 2s;
+  }
+  @keyframes lift-up {
+    from {
+      transform: translateY(0px)
+    }
+    50% {
+      transform: translateY(-15px)
+    }
+    100% {
+      transform: translateY(0px)
+    }
+  }
+  .search-request {
+    border-radius: 50px;
+    border: 1px solid white;
+    padding-left: 10px;
+    width: 50%;
+    height: 30px;
+    background: white;
+    font-family: "Inter", sans-serif;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 100%;
+    margin-bottom: 30px;
+  }
+  .weather-description {
+    display: flex;
+    justify-content: flex-around;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .weather-picture {
+    margin-right: 15px;
+  }
+  .weather-characteristics {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+  }
+  .error-container{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .error-text {
+    text-align: center;
+    font-family: "Caveat", cursive;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 40px 0 40px 0;
+    color: red;
+  
+  }
+  .error-image {
+    margin-bottom: 70px;  
+  }
+  .hidden {
+    display: none;
+  }
+  .return-button {
+    border: 2px solid red;
+    color: red;
+    margin-bottom: 50px;
+    background-color: white;
+  }
