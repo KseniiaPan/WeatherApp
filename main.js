@@ -17,6 +17,7 @@ async function checkWeather(city) {
       throw new Error(`${response.status} — ${response.statusText}`);
     }
   } catch (err) {
+    console.log("Поймали ошибку! Вот она: ", err.message);
     errorBlock.classList.remove("hidden");
     forecastBlock.classList.add("hidden");
     searchContainer.classList.add("hidden");
