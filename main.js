@@ -19,15 +19,26 @@ async function checkWeather(city) {
   } catch (err) {
     console.log("Поймали ошибку! Вот она: ", err.message);
     errorBlock.classList.remove("hidden");
-    forecastBlock.classList.add("hidden");
+
     searchContainer.classList.add("hidden");
   }
   const data = await response.json();
   console.log(data);
   displayWeather(data);
 }
-
+const isSunnyWeather = (data) => {
+  if (
+    data.weather[0].description === "clear sky" ||
+    data.weather[0].description === "few clouds" ||
+    data.weather[0].description === "scattered clouds"
+  ) {
+    forecastBlock.style.background = "#87CEEB";
+  } else {
+    forecastBlock.style.background = "#A5A5A5";
+  }
+};
 const displayWeather = (data) => {
+  forecastBlock.classList.remove("hidden");
   document.querySelector(".city").innerHTML = data.name;
   document.querySelector(".description-text").innerHTML =
     data.weather[0].description;
@@ -41,6 +52,7 @@ const displayWeather = (data) => {
   const iconCode = data.weather[0].icon;
   const iconUrl = "https://openweathermap.org/img/wn/" + iconCode + "@2x.png";
   weatherPicture.setAttribute("src", iconUrl);
+  isSunnyWeather(data);
 };
 
 const removeWeather = () => {
@@ -70,5 +82,6 @@ searchInput.addEventListener("keydown", (event) => {
 
 currentLocation.addEventListener("click", () => {
   removeWeather();
+  forecastBlock.classList.add("hidden");
   searchContainer.classList.remove("hidden");
 });
